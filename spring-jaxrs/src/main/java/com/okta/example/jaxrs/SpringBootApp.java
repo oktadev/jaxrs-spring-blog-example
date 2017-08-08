@@ -1,7 +1,7 @@
-package com.stormpath.example.jaxrs;
+package com.okta.example.jaxrs;
 
-import com.stormpath.example.common.dao.DefaultStormtrooperDao;
-import com.stormpath.example.common.dao.StormtrooperDao;
+import com.okta.example.common.dao.DefaultStormtrooperDao;
+import com.okta.example.common.dao.StormtrooperDao;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

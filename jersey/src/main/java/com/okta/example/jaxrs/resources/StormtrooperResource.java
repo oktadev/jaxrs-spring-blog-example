@@ -1,7 +1,7 @@
-package com.stormpath.example.jaxrs.resources;
+package com.okta.example.jaxrs.resources;
 
-import com.stormpath.example.common.dao.StormtrooperDao;
-import com.stormpath.example.common.model.Stormtrooper;
+import com.okta.example.common.dao.StormtrooperDao;
+import com.okta.example.common.model.Stormtrooper;
 
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
@@ -13,6 +13,9 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import java.util.Collection;
 
+/**
+ * Stormtrooper Resource.
+ */
 @Path("/troopers")
 @Produces("application/json")
 public class StormtrooperResource {
@@ -24,6 +27,10 @@ public class StormtrooperResource {
         this.trooperDao = trooperDao;
     }
 
+    /**
+     * Returns a Collection of all Stormtroopers.
+     * @return Returns a Collection of all Stormtroopers.
+     */
     @GET
     public Collection<Stormtrooper> listTroopers() {
         return trooperDao.listStormtroopers();

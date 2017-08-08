@@ -1,7 +1,7 @@
-package com.stormpath.example.springboot;
+package com.okta.example.springboot;
 
-import com.stormpath.example.common.dao.DefaultStormtrooperDao;
-import com.stormpath.example.common.dao.StormtrooperDao;
+import com.okta.example.common.dao.DefaultStormtrooperDao;
+import com.okta.example.common.dao.StormtrooperDao;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

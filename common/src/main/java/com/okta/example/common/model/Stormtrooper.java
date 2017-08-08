@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.stormpath.example.common.model;
+package com.okta.example.common.model;
 
 public class Stormtrooper {
 

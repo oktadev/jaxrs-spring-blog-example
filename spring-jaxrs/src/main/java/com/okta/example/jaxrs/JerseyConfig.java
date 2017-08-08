@@ -1,4 +1,4 @@
-package com.stormpath.example.jaxrs;
+package com.okta.example.jaxrs;
 
 
 import org.glassfish.jersey.server.ResourceConfig;

@@ -1,4 +1,4 @@
-package com.stormpath.example.springboot.controllers;
+package com.okta.example.springboot.controllers;
 
 public class NotFoundException extends Exception {
 

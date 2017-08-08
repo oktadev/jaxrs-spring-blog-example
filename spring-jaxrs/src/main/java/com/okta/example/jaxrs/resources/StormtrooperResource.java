@@ -1,7 +1,7 @@
-package com.stormpath.example.jaxrs.resources;
+package com.okta.example.jaxrs.resources;
 
-import com.stormpath.example.common.dao.StormtrooperDao;
-import com.stormpath.example.common.model.Stormtrooper;
+import com.okta.example.common.dao.StormtrooperDao;
+import com.okta.example.common.model.Stormtrooper;
 
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;

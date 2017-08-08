@@ -1,20 +1,22 @@
-package com.stormpath.example.springboot.controllers;
+package com.okta.example.springboot.controllers;
 
-import com.stormpath.example.common.dao.StormtrooperDao;
-import com.stormpath.example.common.model.Stormtrooper;
+import com.okta.example.common.dao.StormtrooperDao;
+import com.okta.example.common.model.Stormtrooper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 
 @RestController
-@RequestMapping(path = "/troopers")
+@RequestMapping("/troopers")
 public class StormtrooperController {
 
     private final StormtrooperDao trooperDao;
@@ -24,12 +26,12 @@ public class StormtrooperController {
         this.trooperDao = trooperDao;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public Collection<Stormtrooper> listTroopers() {
         return trooperDao.listStormtroopers();
     }
 
-    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
+    @GetMapping("/{id}")
     public Stormtrooper getTrooper(@PathVariable("id") String id) throws NotFoundException {
 
         Stormtrooper stormtrooper = trooperDao.getStormtrooper(id);
@@ -39,24 +41,19 @@ public class StormtrooperController {
         return stormtrooper;
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping
     public Stormtrooper createTrooper(@RequestBody Stormtrooper trooper) {
-
         return trooperDao.addStormtrooper(trooper);
     }
 
-    @RequestMapping(path = "/{id}", method = RequestMethod.POST)
+    @PostMapping("/{id}")
     public Stormtrooper updateTrooper(@PathVariable("id") String id, @RequestBody Stormtrooper updatedTrooper) throws NotFoundException {
-
         return trooperDao.updateStormtrooper(id, updatedTrooper);
     }
 
-
-    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping("/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void deleteTrooper(@PathVariable("id") String id) {
         trooperDao.deleteStormtrooper(id);
     }
-
-
 }
